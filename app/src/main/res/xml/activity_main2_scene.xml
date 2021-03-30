@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetEnd="@+id/end"
+        motion:constraintSetStart="@id/start"
+        motion:duration="1000"
+        motion:motionInterpolator="linear">
+        <KeyFrameSet></KeyFrameSet>
+        <OnClick motion:targetId="@id/fullView" />
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            android:id="@+id/fullView"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="16dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent" >
+            <CustomAttribute
+                motion:attributeName="backgroundColor"
+                motion:customColorValue="#F16A38" />
+        </Constraint>
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:id="@+id/fullView"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent" >
+            <CustomAttribute
+                motion:attributeName="backgroundColor"
+                motion:customColorValue="#3B8E93" />
+        </Constraint>
+    </ConstraintSet>
+    <ConstraintSet android:id="@+id/fullView" >
+        <Constraint
+            android:id="@+id/fullView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            motion:layout_editor_absoluteY="340dp"
+            motion:layout_editor_absoluteX="16dp" >
+            <CustomAttribute
+                motion:attributeName="backgroundColor"
+                motion:customColorValue="#232123" />
+        </Constraint>
+        <Constraint
+            android:layout_height="wrap_content"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            android:layout_width="wrap_content"
+            android:id="@+id/textView"
+            android:layout_marginBottom="16dp"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="16dp" />
+    </ConstraintSet>
+    <Transition
+        motion:constraintSetStart="@+id/end"
+        motion:constraintSetEnd="@+id/fullView" >
+        <OnClick motion:targetId="@id/fullView" />
+    </Transition>
+</MotionScene>
