@@ -107,7 +107,6 @@ public class NewsViewModel extends ViewModel {
                 @Override
                 public void onResponse(Call<NewsResponse> call, Response<NewsResponse> response) {
                     if (response.body() == null) return;
-                    BreakingNewsPageNo++;
                     if (breakingNewsResponse == null) {
                         breakingNewsResponse = response.body();
                     } else {
